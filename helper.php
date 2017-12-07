@@ -1,11 +1,6 @@
 <?php
 /**
- * Вспомогательный класс для модуля "Рейтинг по уровню опыта". 
- * Исполняет слудующий запрос к базе данных:
- * SELECT username, num_contacts + num_interests * 10 + num_dates * 100 + num_closenesses * 1000 AS Practice 
- * FROM aasgz_users 
- * WHERE num_contacts > 0
- * ORDER BY Practice DESC;
+ * Вспомогательный класс для модуля "История школы в статистике".
  */
  
 class ModRatingHelper
