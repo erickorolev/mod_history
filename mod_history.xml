@@ -2,6 +2,8 @@
 <extension type="module" version="3.1.0" client="site" method="upgrade">
     <name>История школы в статистике</name>
     <author>Эрик Королев</author>
+    <creationDate>December 2017</creationDate>
+    <authorEmail>3254@mail.ru</authorEmail>
     <version>1.0.0</version>
     <description>Модуль отображает статистику деятельности школы.</description>
     <files>
