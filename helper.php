@@ -6,10 +6,11 @@
 class ModHistoryHelper
 { 
     /**
-      * Метод считает количество учеников.
-      * Ученик - это зарегистрированный пользователь, который оплатил обучение.
-      * Оплата обучения - это в столбце количество пожертвований(donat) больше нуля.
-      */
+     * Метод считает количество учеников.
+     * Ученик - это зарегистрированный пользователь, который оплатил обучение.
+     * Оплата обучения - это в столбце количество пожертвований(donat) больше нуля.
+     * return Integer
+     */
     public static function countStudents()
     {
         $db = JFactory::getDbo();
@@ -31,6 +32,7 @@ class ModHistoryHelper
      * Метод считает количество уникальных стран учеников.
      * Есть ученики с незаполненной графой "страна" из-за чего значение = " ".
      * Фильтруется значение " ", чтобы не считать его еще одной уникальной страной.
+     * return Integer
      */
     public static function countCountries()
     {
@@ -53,6 +55,7 @@ class ModHistoryHelper
      * Метод считает количество уникальных городов учеников.
      * Есть ученики с незаполненной графой "город" из-за чего значение = " ".
      * Фильтруется значение " ", чтобы не считать его еще одной уникальным городом.
+     * return Integer
      */
     public static function countCities()
     {
@@ -73,6 +76,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает количество подходов, совершенных всеми учениками.
+     * return Integer
      */
     public static function countContacts()
     {
@@ -92,6 +96,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает количество свиданий, совершенных всеми учениками.
+     * return Integer
      */
     public static function countDates()
     {
@@ -111,6 +116,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает количество секса, совершенных всеми учениками.
+     * return Integer
      */
     public static function countSex()
     {
@@ -130,6 +136,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает сумму пожертвований, совершенных всеми учениками.
+     * return Integer
      */
     public static function countDonat()
     {
@@ -145,5 +152,32 @@ class ModHistoryHelper
         $result = $db->loadResult();
 
         return $result;
+    }
+
+    /**
+     * Функция возвращает окончание для множественного числа слова на основании числа и массива окончаний
+     * param  $number Integer Число на основе которого нужно сформировать окончание
+     * param  $endingsArray  Array Массив слов или окончаний для чисел (1, 4, 5),
+     *         например array('яблоко', 'яблока', 'яблок')
+     * return String
+     */
+    public static function getNumEnding($number, $endingArray)
+    {
+        $number = $number % 100;
+        if ($number>=11 && $number<=19) {
+            $ending=$endingArray[2];
+        }
+        else {
+            $i = $number % 10;
+            switch ($i)
+            {
+                case (1): $ending = $endingArray[0]; break;
+                case (2):
+                case (3):
+                case (4): $ending = $endingArray[1]; break;
+                default: $ending=$endingArray[2];
+            }
+        }
+        return $ending;
     }
 }
