@@ -9,7 +9,7 @@ class ModHistoryHelper
      * Метод считает количество учеников.
      * Ученик - это зарегистрированный пользователь, который оплатил обучение.
      * Оплата обучения - это в столбце количество пожертвований(donat) больше нуля.
-     * return Integer
+     * @return integer
      */
     public static function countStudents()
     {
@@ -32,7 +32,7 @@ class ModHistoryHelper
      * Метод считает количество уникальных стран учеников.
      * Есть ученики с незаполненной графой "страна" из-за чего значение = " ".
      * Фильтруется значение " ", чтобы не считать его еще одной уникальной страной.
-     * return Integer
+     * @return integer
      */
     public static function countCountries()
     {
@@ -55,7 +55,7 @@ class ModHistoryHelper
      * Метод считает количество уникальных городов учеников.
      * Есть ученики с незаполненной графой "город" из-за чего значение = " ".
      * Фильтруется значение " ", чтобы не считать его еще одной уникальным городом.
-     * return Integer
+     * @return integer
      */
     public static function countCities()
     {
@@ -76,7 +76,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает количество подходов, совершенных всеми учениками.
-     * return Integer
+     * @return integer
      */
     public static function countContacts()
     {
@@ -96,7 +96,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает количество свиданий, совершенных всеми учениками.
-     * return Integer
+     * @return integer
      */
     public static function countDates()
     {
@@ -116,7 +116,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает количество секса, совершенных всеми учениками.
-     * return Integer
+     * @return integer
      */
     public static function countSex()
     {
@@ -136,7 +136,7 @@ class ModHistoryHelper
 
     /**
      * Метод считает сумму пожертвований, совершенных всеми учениками.
-     * return Integer
+     * @return integer
      */
     public static function countDonat()
     {
@@ -156,10 +156,10 @@ class ModHistoryHelper
 
     /**
      * Функция возвращает окончание для множественного числа слова на основании числа и массива окончаний
-     * param  $number Integer Число на основе которого нужно сформировать окончание
-     * param  $endingsArray  Array Массив слов или окончаний для чисел (1, 4, 5),
+     * @param  $number Integer Число на основе которого нужно сформировать окончание
+     * @param  $endingsArray  array Массив слов или окончаний для чисел (1, 4, 5),
      *         например array('яблоко', 'яблока', 'яблок')
-     * return String
+     * @return String
      */
     public static function getNumEnding($number, $endingArray)
     {
