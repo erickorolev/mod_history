@@ -48,5 +48,5 @@ $ending_rubles = ["рубль", "рубля", "рублей"];
     и перевели
     <?php echo $num_donat; ?>
     <?php echo ModHistoryHelper::getNumEnding($num_donat, $ending_rubles); ?>
-    пожервований.
+    пожертвований.
 </p>
